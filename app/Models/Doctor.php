@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Doctor extends Model
 {
     protected $fillable = [
-        'full_name',
-        'specialization',
+        'last_name',
+        'first_name',
+        'middle_name',
         'phone',
         'email',
         'description',
