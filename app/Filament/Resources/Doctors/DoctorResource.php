@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Doctors;
 
+use App\Filament\Resources\Doctors\RelationManagers\EducationsRelationManager;
 use App\Filament\Resources\Doctors\Pages\CreateDoctor;
 use App\Filament\Resources\Doctors\Pages\EditDoctor;
 use App\Filament\Resources\Doctors\Pages\ListDoctors;
@@ -20,6 +21,8 @@ class DoctorResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
     protected static ?string $navigationLabel = 'Врачи';
+    protected static ?string $modelLabel = 'Врач';
+    protected static ?string $pluralModelLabel = 'Врачи';
 
     public static function form(Schema $schema): Schema
     {
@@ -34,7 +37,7 @@ class DoctorResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            EducationsRelationManager::class,
         ];
     }
 

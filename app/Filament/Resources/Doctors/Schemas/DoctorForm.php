@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Doctors\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
@@ -16,7 +17,7 @@ class DoctorForm
                 ->label('Телефон')
                     ->tel(),
                 TextInput::make('email')
-                    ->label('Email')
+                    ->label('Электронная почта')
                     ->email(),
                 Textarea::make('description')
                 ->label('Описание')
@@ -29,6 +30,12 @@ class DoctorForm
                 ->required(),
                 TextInput::make('middle_name')
                 ->label('Отчество'),
+            Select::make('specialties')
+                ->label('Специальности')
+                ->multiple()
+                ->relationship('specialties', 'name')
+                ->searchable()
+                ->preload(),
             ]);
     }
 }

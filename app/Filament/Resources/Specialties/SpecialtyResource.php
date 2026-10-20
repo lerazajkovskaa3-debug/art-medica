@@ -23,7 +23,7 @@ class SpecialtyResource extends Resource
     protected static ?string $recordTitleAttribute = 'name';
 
     protected static ?string $modelLabel = 'Специальность';
-    protected static ?string $pluraModelLabel = 'Специальности';
+    protected static ?string $pluralModelLabel = 'Специальности';
     protected static ?string $navigationLabel = 'Специальности';
     
     public static function form(Schema $schema): Schema

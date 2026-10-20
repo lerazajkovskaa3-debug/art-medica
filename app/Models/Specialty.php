@@ -9,4 +9,9 @@ class Specialty extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function specialties()
+    {
+        return $this->belongsToMany(Doctor::class)->withTimestamps();
+    }
 }

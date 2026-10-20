@@ -14,4 +14,15 @@ class Doctor extends Model
         'email',
         'description',
     ];
+
+    public function specialties()
+    {
+        return $this->belongsToMany(Specialty::class)->withTimestamps();
+    }
+
+    public function educations()
+    {
+        return $this->hasMany(DoctorEducation::class);
+    }
+    
 }

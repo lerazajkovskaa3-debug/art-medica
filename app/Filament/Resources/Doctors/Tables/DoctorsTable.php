@@ -18,7 +18,7 @@ class DoctorsTable
                 ->label('Телефон')
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email')
+                    ->label('Электронная почта')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -37,6 +37,9 @@ class DoctorsTable
                 TextColumn::make('middle_name')
                 ->label('Отчество')
                     ->searchable(),
+                TextColumn::make('specialties.name')
+                    ->label('Специальности')
+                    ->badge(),
             ])
             ->filters([
                 //
