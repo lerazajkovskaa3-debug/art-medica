@@ -12,7 +12,8 @@ class SpecialtyForm
             ->components([
                 TextInput::make('name')
                 ->label('Название специальности')
-                ->required(),
+                ->required()
+                ->unique(ignoreRecord: true),
             ]);
     }
 }

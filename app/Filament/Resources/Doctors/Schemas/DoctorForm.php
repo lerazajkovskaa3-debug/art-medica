@@ -4,7 +4,7 @@ namespace App\Filament\Resources\Doctors\Schemas;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\RichEditor;
 use Filament\Schemas\Schema;
 
 class DoctorForm
@@ -19,7 +19,7 @@ class DoctorForm
                 TextInput::make('email')
                     ->label('Электронная почта')
                     ->email(),
-                Textarea::make('description')
+                RichEditor::make('description')
                 ->label('Описание')
                     ->columnSpanFull(),
                 TextInput::make('last_name')
