@@ -25,4 +25,9 @@ class Doctor extends Model
         return $this->hasMany(DoctorEducation::class);
     }
     
+    public function services()
+    {
+        return $this->belongsToMany(Service::class, 'doctor_services')
+            ->withTimestamps();
+    }
 }

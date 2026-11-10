@@ -36,6 +36,12 @@ class DoctorForm
                 ->relationship('specialties', 'name')
                 ->searchable()
                 ->preload(),
+            Select::make('services')
+                    ->label('Услуги врача')
+                    ->multiple()
+                    ->relationship('services', 'name')
+                    ->searchable()
+                    ->preload(),
             ]);
     }
 }
